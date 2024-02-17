@@ -20,3 +20,17 @@ test("Test Input Box", () => {
   expect(inputEl).toHaveAttribute("value", "Ritik Tailor");
   expect(inputEl).toHaveAttribute("type", "text");
 });
+
+describe("UI Test Group", () => {
+  test("Group First Test", () => {
+    render(<App />);
+    const checkInput = screen.getByRole("textbox");
+    expect(checkInput).toBeInTheDocument();
+  });
+});
+
+/*
+  describe can also be used 
+  as describe.skip it will skip the whole group
+  and describe.only will run that group and skip the others 
+ */
