@@ -8,3 +8,15 @@ test("Test First React App", () => {
   expect(text).toBeInTheDocument();
   expect(title).toBeInTheDocument();
 });
+
+test("Test Input Box", () => {
+  render(<App />);
+  const inputEl = screen.getByRole("textbox");
+  const placeholder = screen.getByPlaceholderText("Enter user name");
+  expect(inputEl).toBeInTheDocument();
+  expect(placeholder).toBeInTheDocument();
+  expect(inputEl).toHaveAttribute("name", "username");
+  expect(inputEl).toHaveAttribute("id", "userId");
+  expect(inputEl).toHaveAttribute("value", "Ritik Tailor");
+  expect(inputEl).toHaveAttribute("type", "text");
+});
