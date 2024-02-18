@@ -298,21 +298,36 @@ import handleExternalPrint from "./helper";
 //   }
 // });
 
-test("Assertion testing with input", () => {
+// test("Assertion testing with input", () => {
+//   render(<App />);
+//   const input = screen.getByRole("textbox");
+//   expect(input).toBeInTheDocument();
+//   expect(input).toHaveValue("Hello");
+//   expect(input).toBeEnabled();
+//   // expect(input).toBeDisabled();
+//   expect(input).toHaveAttribute("id", "user");
+//   expect(input).toHaveClass("user-style");
+// });
+
+// test("Negative Assertion testing with input", () => {
+//   render(<App />);
+//   const btn = screen.getByRole("button");
+//   expect(btn).toBeInTheDocument();
+//   expect(btn).not.toHaveClass("btn1");
+//   // expect(btn).not.toHaveAttribute("id");
+// });
+
+test("test match with string", () => {
   render(<App />);
-  const input = screen.getByRole("textbox");
-  expect(input).toBeInTheDocument();
-  expect(input).toHaveValue("Hello");
-  expect(input).toBeEnabled();
-  // expect(input).toBeDisabled();
-  expect(input).toHaveAttribute("id", "user");
-  expect(input).toHaveClass("user-style");
+  // const div = screen.getByText("Hello world");
+  const div = screen.getByText("Hello", { exact: false });
+  expect(div).toBeInTheDocument();
 });
 
-test("Negative Assertion testing with input", () => {
+test("test match with regex", () => {
   render(<App />);
-  const btn = screen.getByRole("button");
-  expect(btn).toBeInTheDocument();
-  expect(btn).not.toHaveClass("btn1");
-  // expect(btn).not.toHaveAttribute("id");
+  // const div = screen.getByText("Hello world");
+  // const div = screen.getByText(/hello/i);
+  const div = screen.getByText(/hello w?orld/i); // w will be ignore
+  expect(div).toBeInTheDocument();
 });

@@ -126,7 +126,7 @@ function App() {
         }}
         alt="img"
       /> */}
-      <input
+      {/* <input
         type="text"
         defaultValue="Hello"
         className="user-style"
@@ -134,7 +134,8 @@ function App() {
       />
       <button className="btn" id="btnId">
         Click me
-      </button>
+      </button> */}
+      <div>Hello world</div>
     </div>
   );
 }
