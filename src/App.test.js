@@ -1,13 +1,13 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import App from "./App";
 
-beforeAll(() => {
-  console.log("***** Before All UseCase *****");
-});
+// beforeAll(() => {
+//   console.log("***** Before All UseCase *****");
+// });
 
-beforeEach(() => {
-  console.log("***** Before Each UseCase *****");
-});
+// beforeEach(() => {
+//   console.log("***** Before Each UseCase *****");
+// });
 
 test("Test First React App", () => {
   render(<App />);
@@ -61,10 +61,15 @@ test("Test Click Event with Button", () => {
   expect(screen.getByText("Update screen Data")).toBeInTheDocument();
 });
 
-afterAll(() => {
-  console.log("***** Before All UseCase *****");
+test("Test snapshot of App component", () => {
+  const component = render(<App />);
+  expect(component).toMatchSnapshot();
 });
 
-afterEach(() => {
-  console.log("***** Before Each UseCase *****");
-});
+// afterAll(() => {
+//   console.log("***** Before All UseCase *****");
+// });
+
+// afterEach(() => {
+//   console.log("***** Before Each UseCase *****");
+// });
