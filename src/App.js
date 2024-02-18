@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Users from "./Users";
 
 function App() {
   const [data, setData] = useState("");
@@ -34,6 +35,7 @@ function App() {
         Update screen
       </button>
       <p>{screenData}</p>
+      <Users />
     </div>
   );
 }

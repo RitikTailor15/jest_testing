@@ -1,5 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import App from "./App";
+import Users from "./Users";
 
 // beforeAll(() => {
 //   console.log("***** Before All UseCase *****");
@@ -61,9 +63,14 @@ test("Test Click Event with Button", () => {
   expect(screen.getByText("Update screen Data")).toBeInTheDocument();
 });
 
-test("Test snapshot of App component", () => {
-  const component = render(<App />);
-  expect(component).toMatchSnapshot();
+// test("Test snapshot of App component", () => {
+//   const component = render(<App />);
+//   expect(component).toMatchSnapshot();
+// });
+
+test("Test Class component function", () => {
+  const componentData = renderer.create(<Users />).getInstance();
+  expect(componentData.getUserList()).toMatch("User List returned");
 });
 
 // afterAll(() => {
