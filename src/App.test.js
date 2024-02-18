@@ -264,11 +264,11 @@ import handleExternalPrint from "./helper";
 //   }
 // });
 
-test("testing by getByTitle", () => {
-  render(<App />);
-  const titleEl = screen.getByTitle("Click");
-  expect(titleEl).toBeInTheDocument();
-});
+// test("testing by getByTitle", () => {
+//   render(<App />);
+//   const titleEl = screen.getByTitle("Click");
+//   expect(titleEl).toBeInTheDocument();
+// });
 
 // test("testing span by getByTitle", () => {
 //   render(<App />);
@@ -276,10 +276,24 @@ test("testing by getByTitle", () => {
 //   expect(titleEl).toBeInTheDocument();
 // });
 
-test("testing span by getAllByTitle", () => {
+// test("testing span by getAllByTitle", () => {
+//   render(<App />);
+//   const titleEl = screen.getAllByTitle("blackIcon");
+//   for (let i = 0; i < titleEl.length; i++) {
+//     expect(titleEl[i]).toBeInTheDocument();
+//   }
+// });
+
+// test("testing alt image by getByAltText", () => {
+//   render(<App />);
+//   const imageEL = screen.getByAltText("img");
+//   expect(imageEL).toBeInTheDocument();
+// });
+
+test("testing alt image by getAllByAltText", () => {
   render(<App />);
-  const titleEl = screen.getAllByTitle("blackIcon");
-  for (let i = 0; i < titleEl.length; i++) {
-    expect(titleEl[i]).toBeInTheDocument();
+  const imageEL = screen.getAllByAltText("img");
+  for (let i = 0; i < imageEL.length; i++) {
+    expect(imageEL[i]).toBeInTheDocument();
   }
 });

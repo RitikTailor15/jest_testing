@@ -107,9 +107,25 @@ function App() {
       {/* <input type="text" defaultValue="Hello" />
       <textarea defaultValue="Hello" />
       <input type="radio" defaultValue="male" /> */}
-      <button title="Click">Click me</button>
+      {/* <button title="Click">Click me</button>
       <span title="blackIcon">&#x2660;</span>
-      <span title="blackIcon">&#x2660;</span>
+      <span title="blackIcon">&#x2660;</span> */}
+      <img
+        title="Car Image"
+        src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?cs=srgb&dl=pexels-mike-bird-170811.jpg&fm=jpg"
+        style={{
+          width: "500px",
+        }}
+        alt="img"
+      />
+      <img
+        title="Car Image"
+        src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?cs=srgb&dl=pexels-mike-bird-170811.jpg&fm=jpg"
+        style={{
+          width: "500px",
+        }}
+        alt="img"
+      />
     </div>
   );
 }
