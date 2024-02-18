@@ -9,6 +9,7 @@ import {
 import App from "./App";
 // import Users from "./Users";
 import handleExternalPrint from "./helper";
+import userEvent from "@testing-library/user-event";
 
 // beforeAll(() => {
 //   console.log("***** Before All UseCase *****");
@@ -370,12 +371,20 @@ import handleExternalPrint from "./helper";
 //   expect(divEl).toBeInTheDocument();
 // });
 
-test("test within the element/function", () => {
+// test("test within the element/function", () => {
+//   render(<App />);
+//   const hEL = screen.getByText("Hello world");
+//   let subEL = within(hEL).getByText("Hello");
+//   let subEL2 = within(hEL).getByText("Hi");
+//   expect(hEL).toBeInTheDocument();
+//   expect(subEL).toBeInTheDocument();
+//   expect(subEL2).toBeInTheDocument();
+// });
+
+test("Test user event click event", async () => {
+  userEvent.setup();
   render(<App />);
-  const hEL = screen.getByText("Hello world");
-  let subEL = within(hEL).getByText("Hello");
-  let subEL2 = within(hEL).getByText("Hi");
-  expect(hEL).toBeInTheDocument();
-  expect(subEL).toBeInTheDocument();
-  expect(subEL2).toBeInTheDocument();
+  const btn = screen.getByText("Click me");
+  await userEvent.click(btn);
+  expect(screen.getByText("hello")).toBeInTheDocument();
 });

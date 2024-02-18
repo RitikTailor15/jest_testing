@@ -20,6 +20,8 @@ function App() {
   //     setFinData(true);
   //   }, 1000);
   // });
+
+  const [userDataEv, setUserDataEv] = useState("");
   return (
     <div className="App">
       {/* <p>Test First React app</p> */}
@@ -147,12 +149,14 @@ function App() {
       {login ? <button>Login</button> : <button>Logout</button>} */}
       {/* {findData ? <h1>data found</h1> : <h1>no data found</h1>} */}
       {/* <div id="testid">Hello world</div> */}
-      <div>
+      {/* <div>
         Hello world
         <p>Hi</p>
         <p>Hello</p>
         <p>Hey</p>
-      </div>
+      </div> */}
+      <p>{userDataEv}</p>
+      <button onClick={() => setUserDataEv("hello")}>Click me</button>
     </div>
   );
 }
