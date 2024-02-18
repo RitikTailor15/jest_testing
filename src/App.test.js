@@ -5,6 +5,8 @@ import {
   configure,
   within,
   act,
+  prettyDOM,
+  logRoles,
 } from "@testing-library/react";
 // import renderer from "react-test-renderer";
 import App from "./App";
@@ -415,12 +417,21 @@ import User from "./User";
 //   expect(el).toBeInTheDocument();
 // });
 
-test("Test function props", async () => {
-  const testFunction = jest.fn();
-  userEvent.setup();
-  render(<User name="Ritik" handleBtnClick={testFunction} />);
-  const btn = screen.getByRole("button");
-  await userEvent.click(btn);
-  // expect(testFunction).toBeCalled();
-  expect(testFunction).toHaveBeenCalled();
+// test("Test function props", async () => {
+//   const testFunction = jest.fn();
+//   userEvent.setup();
+//   render(<User name="Ritik" handleBtnClick={testFunction} />);
+//   const btn = screen.getByRole("button");
+//   await userEvent.click(btn);
+//   // expect(testFunction).toBeCalled();
+//   expect(testFunction).toHaveBeenCalled();
+// });
+
+test("Testing debugging component", () => {
+  const { container, debug } = render(<App />);
+  // const el = screen.getByText("Heading 2");
+  // expect(el).toBeInTheDocument();
+  // console.log(prettyDOM(container));
+  // debug();
+  logRoles(container);
 });

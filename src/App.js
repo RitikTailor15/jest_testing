@@ -163,7 +163,8 @@ function App() {
         onChange={(e) => setName(e.target.value)}
         placeholder="enter name"
       /> */}
-      <User name="Ritik Tailor" />
+      {/* <User name="Ritik Tailor" /> */}
+      <h2>Heading 2</h2>
     </div>
   );
 }
