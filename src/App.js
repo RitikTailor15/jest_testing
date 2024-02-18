@@ -1,13 +1,20 @@
 import { useState } from "react";
 import "./App.css";
-import Users from "./Users";
+import handleExternalPrint from "./helper";
+// import Users from "./Users";
 
 function App() {
-  const [data, setData] = useState("");
-  const [screenData, setScreenData] = useState("");
+  // const [data, setData] = useState("");
+  // const [screenData, setScreenData] = useState("");
+  const [btnData, setBtnData] = useState("");
+
+  const handleBtnData = () => {
+    setBtnData("hello");
+  };
+
   return (
     <div className="App">
-      <p>Test First React app</p>
+      {/* <p>Test First React app</p> */}
       {/* <input
         type="text"
         placeholder="Enter user name"
@@ -16,7 +23,7 @@ function App() {
         value="Ritik Tailor"
         readOnly
       /> */}
-      <br />
+      {/* <br />
       <img
         title="Car Image"
         src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?cs=srgb&dl=pexels-mike-bird-170811.jpg&fm=jpg"
@@ -35,7 +42,12 @@ function App() {
         Update screen
       </button>
       <p>{screenData}</p>
-      <Users />
+      <Users /> */}
+      <button data-testid="btn1" onClick={handleBtnData}>
+        Update
+      </button>
+      <button onClick={handleExternalPrint}>Update</button>
+      <p>{btnData}</p>
     </div>
   );
 }

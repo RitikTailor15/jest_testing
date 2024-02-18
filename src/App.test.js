@@ -1,7 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import renderer from "react-test-renderer";
+// import renderer from "react-test-renderer";
 import App from "./App";
-import Users from "./Users";
+// import Users from "./Users";
+import handleExternalPrint from "./helper";
 
 // beforeAll(() => {
 //   console.log("***** Before All UseCase *****");
@@ -11,13 +12,13 @@ import Users from "./Users";
 //   console.log("***** Before Each UseCase *****");
 // });
 
-test("Test First React App", () => {
-  render(<App />);
-  const text = screen.getByText(/Test First React App/i);
-  const title = screen.getByTitle(/Car Image/i);
-  expect(text).toBeInTheDocument();
-  expect(title).toBeInTheDocument();
-});
+// test("Test First React App", () => {
+//   render(<App />);
+//   const text = screen.getByText(/Test First React App/i);
+//   const title = screen.getByTitle(/Car Image/i);
+//   expect(text).toBeInTheDocument();
+//   expect(title).toBeInTheDocument();
+// });
 
 // test("Test Input Box", () => {
 //   render(<App />);
@@ -31,13 +32,13 @@ test("Test First React App", () => {
 //   expect(inputEl).toHaveAttribute("type", "text");
 // });
 
-describe("UI Test Group", () => {
-  test("Group First Test", () => {
-    render(<App />);
-    const checkInput = screen.getByRole("textbox");
-    expect(checkInput).toBeInTheDocument();
-  });
-});
+// describe("UI Test Group", () => {
+//   test("Group First Test", () => {
+//     render(<App />);
+//     const checkInput = screen.getByRole("textbox");
+//     expect(checkInput).toBeInTheDocument();
+//   });
+// });
 
 /*
   describe can also be used 
@@ -47,31 +48,31 @@ describe("UI Test Group", () => {
 
 // Test onChange event
 
-test("Test onChange event on input box", () => {
-  render(<App />);
-  const inputEl = screen.getByRole("textbox");
-  expect(inputEl).toBeInTheDocument();
-  fireEvent.change(inputEl, { target: { value: "Ritik Tailor" } });
-  expect(inputEl.value).toBe("Ritik Tailor");
-});
+// test("Test onChange event on input box", () => {
+//   render(<App />);
+//   const inputEl = screen.getByRole("textbox");
+//   expect(inputEl).toBeInTheDocument();
+//   fireEvent.change(inputEl, { target: { value: "Ritik Tailor" } });
+//   expect(inputEl.value).toBe("Ritik Tailor");
+// });
 
-test("Test Click Event with Button", () => {
-  render(<App />);
-  const btnEl = screen.getByRole("button");
+// test("Test Click Event with Button", () => {
+//   render(<App />);
+//   const btnEl = screen.getByRole("button");
 
-  fireEvent.click(btnEl);
-  expect(screen.getByText("Update screen Data")).toBeInTheDocument();
-});
+//   fireEvent.click(btnEl);
+//   expect(screen.getByText("Update screen Data")).toBeInTheDocument();
+// });
 
 // test("Test snapshot of App component", () => {
 //   const component = render(<App />);
 //   expect(component).toMatchSnapshot();
 // });
 
-test("Test Class component function", () => {
-  const componentData = renderer.create(<Users />).getInstance();
-  expect(componentData.getUserList()).toMatch("User List returned");
-});
+// test("Test Class component function", () => {
+//   const componentData = renderer.create(<Users />).getInstance();
+//   expect(componentData.getUserList()).toMatch("User List returned");
+// });
 
 // afterAll(() => {
 //   console.log("***** Before All UseCase *****");
@@ -80,3 +81,14 @@ test("Test Class component function", () => {
 // afterEach(() => {
 //   console.log("***** Before Each UseCase *****");
 // });
+
+test("Function method test with click event", () => {
+  render(<App />);
+  const btn = screen.getByTestId("btn1");
+  fireEvent.click(btn);
+  expect(screen.getByText("hello")).toBeInTheDocument();
+});
+
+test("Function method test without click event", () => {
+  expect(handleExternalPrint()).toMatch("hi");
+});
