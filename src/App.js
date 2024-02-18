@@ -94,12 +94,15 @@ function App() {
       {/* <input type="text" placeholder="This is place holder" />
       <input type="text" placeholder="This is place holder" />
       <input type="text" placeholder="This is place holder" /> */}
-      <button>Login</button>
+      {/* <button>Login</button>
       <p className="paraStyle" id="para1">
         p test
       </p>
       <h1>heading tag</h1>
-      <h1>heading tag</h1>
+      <h1>heading tag</h1> */}
+      <div data-testid="div1">Testing with test id</div>
+      <h2 data-testid="h2">h2 Testing with test id</h2>
+      <div data-testid="div1">Testing with test id</div>
     </div>
   );
 }

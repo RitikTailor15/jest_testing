@@ -182,19 +182,19 @@ import handleExternalPrint from "./helper";
 //   }
 // });
 
-test("getByText single button testing", () => {
-  render(<App />);
-  const btn = screen.getByText("Login");
-  expect(btn).toBeInTheDocument();
-});
+// test("getByText single button testing", () => {
+//   render(<App />);
+//   const btn = screen.getByText("Login");
+//   expect(btn).toBeInTheDocument();
+// });
 
-test("getByText single p tag testing", () => {
-  render(<App />);
-  const p = screen.getByText("p test");
-  expect(p).toBeInTheDocument();
-  expect(p).toHaveClass("paraStyle");
-  expect(p).toHaveAttribute("id", "para1");
-});
+// test("getByText single p tag testing", () => {
+//   render(<App />);
+//   const p = screen.getByText("p test");
+//   expect(p).toBeInTheDocument();
+//   expect(p).toHaveClass("paraStyle");
+//   expect(p).toHaveAttribute("id", "para1");
+// });
 
 // test("getByText single h1 tag testing", () => {
 //   render(<App />);
@@ -202,10 +202,30 @@ test("getByText single p tag testing", () => {
 //   expect(h).toBeInTheDocument();
 // });
 
-test("getAllByText multiple h1 tag testing", () => {
+// test("getAllByText multiple h1 tag testing", () => {
+//   render(<App />);
+//   const hs = screen.getAllByText("heading tag");
+//   for (let i = 0; i < hs.clientHeight; i++) {
+//     expect(hs[i]).toBeInTheDocument();
+//   }
+// });
+
+// test("Test by getTestId", () => {
+//   render(<App />);
+//   const div1 = screen.getByTestId("div1");
+//   expect(div1).toBeInTheDocument();
+// });
+
+test("Test h2 by getTestId", () => {
   render(<App />);
-  const hs = screen.getAllByText("heading tag");
-  for (let i = 0; i < hs.clientHeight; i++) {
-    expect(hs[i]).toBeInTheDocument();
+  const div1 = screen.getByTestId("h2");
+  expect(div1).toBeInTheDocument();
+});
+
+test("Test by getAllTestId", () => {
+  render(<App />);
+  const div1 = screen.getAllByTestId("div1");
+  for (let i = 0; i < div1.length; i++) {
+    expect(div1[i]).toBeInTheDocument();
   }
 });
