@@ -21,7 +21,8 @@ function App() {
   //   }, 1000);
   // });
 
-  const [userDataEv, setUserDataEv] = useState("");
+  // const [userDataEv, setUserDataEv] = useState("");
+  const [name, setName] = useState("");
   return (
     <div className="App">
       {/* <p>Test First React app</p> */}
@@ -82,7 +83,6 @@ function App() {
       <input type="text" id="user-name" defaultValue="Hello" />
       <label htmlFor="user-skills">Skills</label>
       <input type="checkbox" id="user-skills" defaultChecked /> */}
-
       {/* <label htmlFor="user-name1">Username</label>
       <input type="text" id="user-name1" defaultValue="Hello" />
 
@@ -100,7 +100,6 @@ function App() {
 
       <label htmlFor="user-skills3">Skills</label>
       <input type="checkbox" id="user-skills3" defaultChecked /> */}
-
       {/* <input type="text" placeholder="This is place holder" />
       <input type="text" placeholder="This is place holder" />
       <input type="text" placeholder="This is place holder" /> */}
@@ -155,8 +154,14 @@ function App() {
         <p>Hello</p>
         <p>Hey</p>
       </div> */}
-      <p>{userDataEv}</p>
-      <button onClick={() => setUserDataEv("hello")}>Click me</button>
+      {/* <p>{userDataEv}</p>
+      <button onClick={() => setUserDataEv("hello")}>Click me</button> */}
+      <h2>{name}</h2>
+      <input
+        type="text"
+        onChange={(e) => setName(e.target.value)}
+        placeholder="enter name"
+      />
     </div>
   );
 }

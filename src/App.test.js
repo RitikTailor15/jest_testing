@@ -381,10 +381,18 @@ import userEvent from "@testing-library/user-event";
 //   expect(subEL2).toBeInTheDocument();
 // });
 
-test("Test user event click event", async () => {
+// test("Test user event click event", async () => {
+//   userEvent.setup();
+//   render(<App />);
+//   const btn = screen.getByText("Click me");
+//   await userEvent.click(btn);
+//   expect(screen.getByText("hello")).toBeInTheDocument();
+// });
+
+test("Test onchange keyboard event", async () => {
   userEvent.setup();
   render(<App />);
-  const btn = screen.getByText("Click me");
-  await userEvent.click(btn);
-  expect(screen.getByText("hello")).toBeInTheDocument();
+  const el = screen.getByRole("textbox");
+  await userEvent.type(el, "Hello");
+  expect(screen.getByText("Hello")).toBeInTheDocument();
 });
