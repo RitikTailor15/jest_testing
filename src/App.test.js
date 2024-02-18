@@ -172,12 +172,40 @@ import handleExternalPrint from "./helper";
 //   expect(placeHolderInput).toBeInTheDocument();
 // });
 
-test("getAllByPlaceholderText", () => {
+// test("getAllByPlaceholderText", () => {
+//   render(<App />);
+//   const placeHolderInputs = screen.getAllByPlaceholderText(
+//     "This is place holder"
+//   );
+//   for (let i = 0; i < placeHolderInputs.length; i++) {
+//     expect(placeHolderInputs[i]).toBeInTheDocument();
+//   }
+// });
+
+test("getByText single button testing", () => {
   render(<App />);
-  const placeHolderInputs = screen.getAllByPlaceholderText(
-    "This is place holder"
-  );
-  for (let i = 0; i < placeHolderInputs.length; i++) {
-    expect(placeHolderInputs[i]).toBeInTheDocument();
+  const btn = screen.getByText("Login");
+  expect(btn).toBeInTheDocument();
+});
+
+test("getByText single p tag testing", () => {
+  render(<App />);
+  const p = screen.getByText("p test");
+  expect(p).toBeInTheDocument();
+  expect(p).toHaveClass("paraStyle");
+  expect(p).toHaveAttribute("id", "para1");
+});
+
+// test("getByText single h1 tag testing", () => {
+//   render(<App />);
+//   const h = screen.getByText("heading tag");
+//   expect(h).toBeInTheDocument();
+// });
+
+test("getAllByText multiple h1 tag testing", () => {
+  render(<App />);
+  const hs = screen.getAllByText("heading tag");
+  for (let i = 0; i < hs.clientHeight; i++) {
+    expect(hs[i]).toBeInTheDocument();
   }
 });

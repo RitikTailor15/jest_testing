@@ -91,9 +91,15 @@ function App() {
       <label htmlFor="user-skills3">Skills</label>
       <input type="checkbox" id="user-skills3" defaultChecked /> */}
 
+      {/* <input type="text" placeholder="This is place holder" />
       <input type="text" placeholder="This is place holder" />
-      <input type="text" placeholder="This is place holder" />
-      <input type="text" placeholder="This is place holder" />
+      <input type="text" placeholder="This is place holder" /> */}
+      <button>Login</button>
+      <p className="paraStyle" id="para1">
+        p test
+      </p>
+      <h1>heading tag</h1>
+      <h1>heading tag</h1>
     </div>
   );
 }
