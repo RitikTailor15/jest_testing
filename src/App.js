@@ -23,7 +23,16 @@ function App() {
   // });
 
   // const [userDataEv, setUserDataEv] = useState("");
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
+  const [apiData, setAPIData] = useState([]);
+  const getAPIData = async () => {
+    let result = await fetch("https://jsonplaceholder.typicode.com/users");
+    result = await result.json();
+    setAPIData(result);
+  };
+  useEffect(() => {
+    getAPIData();
+  }, []);
   return (
     <div className="App">
       {/* <p>Test First React app</p> */}
@@ -164,7 +173,11 @@ function App() {
         placeholder="enter name"
       /> */}
       {/* <User name="Ritik Tailor" /> */}
-      <h2>Heading 2</h2>
+      {/* <h2>Heading 2</h2> */}
+      <h1>API call</h1>
+      {apiData.map((data) => {
+        return <div key={data?.id}>{data?.name}</div>;
+      })}
     </div>
   );
 }
