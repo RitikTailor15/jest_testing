@@ -119,16 +119,30 @@ import handleExternalPrint from "./helper";
 //   expect(input2).toBeInTheDocument();
 // });
 
-test("getAllByRole test", () => {
+// test("getAllByRole test", () => {
+//   render(<App />);
+//   const btns = screen.getAllByRole("button");
+//   const options = screen.getAllByRole("option");
+
+//   for (let i = 0; i < btns.length; i++) {
+//     expect(btns[i]).toBeInTheDocument();
+//   }
+
+//   for (let i = 0; i < options.length; i++) {
+//     expect(options[i]).toBeInTheDocument();
+//   }
+// });
+
+test("getByLabelText 1", () => {
   render(<App />);
-  const btns = screen.getAllByRole("button");
-  const options = screen.getAllByRole("option");
+  const input = screen.getByLabelText("Username");
+  expect(input).toBeInTheDocument();
+  expect(input).toHaveValue("Hello");
+});
 
-  for (let i = 0; i < btns.length; i++) {
-    expect(btns[i]).toBeInTheDocument();
-  }
-
-  for (let i = 0; i < options.length; i++) {
-    expect(options[i]).toBeInTheDocument();
-  }
+test("getByLabelText 2", () => {
+  render(<App />);
+  const skills = screen.getByLabelText("Skills");
+  expect(skills).toBeInTheDocument();
+  expect(skills).toBeChecked();
 });

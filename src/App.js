@@ -57,7 +57,7 @@ function App() {
       <label htmlFor="input2">User age</label>
       <input type="text" id="input2" />
       <div role="dummy">Hello</div> */}
-      <button>Click me</button>
+      {/* <button>Click me</button>
       <button>Click me</button>
       <button>Click me</button>
       <button>Click me</button>
@@ -67,7 +67,11 @@ function App() {
         <option>2</option>
         <option>3</option>
         <option>4</option>
-      </select>
+      </select> */}
+      <label htmlFor="user-name">Username</label>
+      <input type="text" id="user-name" defaultValue="Hello" />
+      <label htmlFor="user-skills">Skills</label>
+      <input type="checkbox" id="user-skills" defaultChecked />
     </div>
   );
 }
