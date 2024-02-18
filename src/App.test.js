@@ -317,17 +317,30 @@ import handleExternalPrint from "./helper";
 //   // expect(btn).not.toHaveAttribute("id");
 // });
 
-test("test match with string", () => {
-  render(<App />);
-  // const div = screen.getByText("Hello world");
-  const div = screen.getByText("Hello", { exact: false });
-  expect(div).toBeInTheDocument();
-});
+// test("test match with string", () => {
+//   render(<App />);
+//   // const div = screen.getByText("Hello world");
+//   const div = screen.getByText("Hello", { exact: false });
+//   expect(div).toBeInTheDocument();
+// });
 
-test("test match with regex", () => {
+// test("test match with regex", () => {
+//   render(<App />);
+//   // const div = screen.getByText("Hello world");
+//   // const div = screen.getByText(/hello/i);
+//   const div = screen.getByText(/hello w?orld/i); // w will be ignore
+//   expect(div).toBeInTheDocument();
+// });
+
+test("Test match with function", () => {
   render(<App />);
-  // const div = screen.getByText("Hello world");
-  // const div = screen.getByText(/hello/i);
-  const div = screen.getByText(/hello w?orld/i); // w will be ignore
-  expect(div).toBeInTheDocument();
+  // const divEl = screen.getByText((content, el) => content.startsWith("Hello"));
+  // const divEl = screen.getByText((content, el) => content.endsWith("world"));
+  // const divEl = screen.getByText((content, el) => {
+  //   return content.includes("ll");
+  // });
+  const divEl = screen.getByText((content, el) => {
+    return content.length === 11;
+  });
+  expect(divEl).toBeInTheDocument();
 });
