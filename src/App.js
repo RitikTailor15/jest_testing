@@ -12,6 +12,8 @@ function App() {
   //   setBtnData("hello");
   // };
 
+  let login = false;
+
   return (
     <div className="App">
       {/* <p>Test First React app</p> */}
@@ -136,6 +138,7 @@ function App() {
         Click me
       </button> */}
       <div>Hello world</div>
+      {login ? <button>Login</button> : <button>Logout</button>}
     </div>
   );
 }

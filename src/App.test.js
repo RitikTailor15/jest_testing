@@ -332,15 +332,22 @@ import handleExternalPrint from "./helper";
 //   expect(div).toBeInTheDocument();
 // });
 
-test("Test match with function", () => {
+// test("Test match with function", () => {
+//   render(<App />);
+//   // const divEl = screen.getByText((content, el) => content.startsWith("Hello"));
+//   // const divEl = screen.getByText((content, el) => content.endsWith("world"));
+//   // const divEl = screen.getByText((content, el) => {
+//   //   return content.includes("ll");
+//   // });
+//   const divEl = screen.getByText((content, el) => {
+//     return content.length === 11;
+//   });
+//   expect(divEl).toBeInTheDocument();
+// });
+
+test("Queryby test case", () => {
   render(<App />);
-  // const divEl = screen.getByText((content, el) => content.startsWith("Hello"));
-  // const divEl = screen.getByText((content, el) => content.endsWith("world"));
-  // const divEl = screen.getByText((content, el) => {
-  //   return content.includes("ll");
-  // });
-  const divEl = screen.getByText((content, el) => {
-    return content.length === 11;
-  });
-  expect(divEl).toBeInTheDocument();
+  // const divel = screen.getByText("Logout");
+  const divel = screen.queryByText("Login");
+  expect(divel).not.toBeInTheDocument();
 });
