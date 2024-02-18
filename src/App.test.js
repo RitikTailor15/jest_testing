@@ -427,11 +427,23 @@ import User from "./User";
 //   expect(testFunction).toHaveBeenCalled();
 // });
 
-test("Testing debugging component", () => {
-  const { container, debug } = render(<App />);
-  // const el = screen.getByText("Heading 2");
-  // expect(el).toBeInTheDocument();
-  // console.log(prettyDOM(container));
-  // debug();
-  logRoles(container);
+// test("Testing debugging component", () => {
+//   const { container, debug } = render(<App />);
+//   // const el = screen.getByText("Heading 2");
+//   // expect(el).toBeInTheDocument();
+//   // console.log(prettyDOM(container));
+//   // debug();
+//   logRoles(container);
+// });
+
+test("API mocking using MSW", () => {
+  render(<App />);
+  const hEL = screen.getByText("API call");
+  expect(hEL).toBeInTheDocument();
+});
+
+test("test for mock API", async () => {
+  render(<App />);
+  const elEL = await screen.findAllByRole("listitem");
+  expect(elEL).toHaveLength(4);
 });

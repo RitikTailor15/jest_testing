@@ -176,7 +176,7 @@ function App() {
       {/* <h2>Heading 2</h2> */}
       <h1>API call</h1>
       {apiData.map((data) => {
-        return <div key={data?.id}>{data?.name}</div>;
+        return <li key={data?.id}>{data?.name}</li>;
       })}
     </div>
   );
