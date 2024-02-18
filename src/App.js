@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 // import handleExternalPrint from "./helper";
 // import Users from "./Users";
@@ -12,8 +12,14 @@ function App() {
   //   setBtnData("hello");
   // };
 
-  let login = false;
+  // let login = false;
+  const [findData, setFinData] = useState(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setFinData(true);
+    }, 1000);
+  });
   return (
     <div className="App">
       {/* <p>Test First React app</p> */}
@@ -137,8 +143,9 @@ function App() {
       <button className="btn" id="btnId">
         Click me
       </button> */}
-      <div>Hello world</div>
-      {login ? <button>Login</button> : <button>Logout</button>}
+      {/* <div>Hello world</div>
+      {login ? <button>Login</button> : <button>Logout</button>} */}
+      {findData ? <h1>data found</h1> : <h1>no data found</h1>}
     </div>
   );
 }

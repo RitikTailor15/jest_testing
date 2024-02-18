@@ -345,9 +345,15 @@ import handleExternalPrint from "./helper";
 //   expect(divEl).toBeInTheDocument();
 // });
 
-test("Queryby test case", () => {
+// test("Queryby test case", () => {
+//   render(<App />);
+//   // const divel = screen.getByText("Logout");
+//   const divel = screen.queryByText("Login");
+//   expect(divel).not.toBeInTheDocument();
+// });
+
+test("test element by findby", async () => {
   render(<App />);
-  // const divel = screen.getByText("Logout");
-  const divel = screen.queryByText("Login");
-  expect(divel).not.toBeInTheDocument();
+  const textEl = await screen.findByText("data found", {}, { timeout: 4000 });
+  expect(textEl).toBeInTheDocument();
 });
