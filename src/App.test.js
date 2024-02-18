@@ -82,13 +82,24 @@ import handleExternalPrint from "./helper";
 //   console.log("***** Before Each UseCase *****");
 // });
 
-test("Function method test with click event", () => {
-  render(<App />);
-  const btn = screen.getByTestId("btn1");
-  fireEvent.click(btn);
-  expect(screen.getByText("hello")).toBeInTheDocument();
-});
+// test("Function method test with click event", () => {
+//   render(<App />);
+//   const btn = screen.getByTestId("btn1");
+//   fireEvent.click(btn);
+//   expect(screen.getByText("hello")).toBeInTheDocument();
+// });
 
-test("Function method test without click event", () => {
-  expect(handleExternalPrint()).toMatch("hi");
+// test("Function method test without click event", () => {
+//   expect(handleExternalPrint()).toMatch("hi");
+// });
+
+test("Test by get Role", () => {
+  render(<App />);
+  const textComp = screen.getByRole("textbox");
+  const btn = screen.getByRole("button");
+
+  expect(textComp).toBeInTheDocument();
+  expect(textComp).toHaveValue("hello");
+  expect(textComp).toBeDisabled();
+  expect(btn).toBeInTheDocument();
 });

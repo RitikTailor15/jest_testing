@@ -1,16 +1,16 @@
 import { useState } from "react";
 import "./App.css";
-import handleExternalPrint from "./helper";
+// import handleExternalPrint from "./helper";
 // import Users from "./Users";
 
 function App() {
   // const [data, setData] = useState("");
   // const [screenData, setScreenData] = useState("");
-  const [btnData, setBtnData] = useState("");
+  // const [btnData, setBtnData] = useState("");
 
-  const handleBtnData = () => {
-    setBtnData("hello");
-  };
+  // const handleBtnData = () => {
+  //   setBtnData("hello");
+  // };
 
   return (
     <div className="App">
@@ -43,11 +43,13 @@ function App() {
       </button>
       <p>{screenData}</p>
       <Users /> */}
-      <button data-testid="btn1" onClick={handleBtnData}>
+      {/* <button data-testid="btn1" onClick={handleBtnData}>
         Update
       </button>
-      <button onClick={handleExternalPrint}>Update</button>
-      <p>{btnData}</p>
+      <button onClick={handleExternalPrint}>Print</button>
+      <p>{btnData}</p> */}
+      <input type="text" defaultValue="hello" disabled />
+      <button>Click me</button>
     </div>
   );
 }
