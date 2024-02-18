@@ -50,13 +50,24 @@ function App() {
       <p>{btnData}</p> */}
       {/* <input type="text" defaultValue="hello" disabled />
       <button>Click me</button> */}
-      <button>Click 1</button>
+      {/* <button>Click 1</button>
       <button>Click 2</button>
       <label htmlFor="input1">User name</label>
       <input type="text" id="input1" />
       <label htmlFor="input2">User age</label>
       <input type="text" id="input2" />
-      <div role="dummy">Hello</div>
+      <div role="dummy">Hello</div> */}
+      <button>Click me</button>
+      <button>Click me</button>
+      <button>Click me</button>
+      <button>Click me</button>
+      <button>Click me</button>
+      <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
     </div>
   );
 }
