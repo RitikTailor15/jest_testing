@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState("");
+  const [screenData, setScreenData] = useState("");
   return (
     <div className="App">
       <p>Test First React app</p>
@@ -29,6 +30,10 @@ function App() {
         value={data}
         onChange={(e) => setData(e.target.value)}
       />
+      <button onClick={() => setScreenData("Update screen Data")}>
+        Update screen
+      </button>
+      <p>{screenData}</p>
     </div>
   );
 }

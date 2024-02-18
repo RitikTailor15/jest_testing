@@ -44,3 +44,11 @@ test("Test onChange event on input box", () => {
   fireEvent.change(inputEl, { target: { value: "Ritik Tailor" } });
   expect(inputEl.value).toBe("Ritik Tailor");
 });
+
+test("Test Click Event with Button", () => {
+  render(<App />);
+  const btnEl = screen.getByRole("button");
+
+  fireEvent.click(btnEl);
+  expect(screen.getByText("Update screen Data")).toBeInTheDocument();
+});
