@@ -13,13 +13,13 @@ function App() {
   // };
 
   // let login = false;
-  const [findData, setFinData] = useState(false);
+  // const [findData, setFinData] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setFinData(true);
-    }, 1000);
-  });
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setFinData(true);
+  //   }, 1000);
+  // });
   return (
     <div className="App">
       {/* <p>Test First React app</p> */}
@@ -145,7 +145,8 @@ function App() {
       </button> */}
       {/* <div>Hello world</div>
       {login ? <button>Login</button> : <button>Logout</button>} */}
-      {findData ? <h1>data found</h1> : <h1>no data found</h1>}
+      {/* {findData ? <h1>data found</h1> : <h1>no data found</h1>} */}
+      <div id="testid">Hello world</div>
     </div>
   );
 }

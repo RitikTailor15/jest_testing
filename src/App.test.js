@@ -352,8 +352,14 @@ import handleExternalPrint from "./helper";
 //   expect(divel).not.toBeInTheDocument();
 // });
 
-test("test element by findby", async () => {
+// test("test element by findby", async () => {
+//   render(<App />);
+//   const textEl = await screen.findByText("data found", {}, { timeout: 4000 });
+//   expect(textEl).toBeInTheDocument();
+// });
+
+test("test with custom query", () => {
   render(<App />);
-  const textEl = await screen.findByText("data found", {}, { timeout: 4000 });
-  expect(textEl).toBeInTheDocument();
+  const divEl = document.querySelector("#testid");
+  expect(divEl).toBeInTheDocument();
 });
