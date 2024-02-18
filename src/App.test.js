@@ -230,10 +230,36 @@ import handleExternalPrint from "./helper";
 //   }
 // });
 
-configure({ testIdAttribute: "element-id" });
+// configure({ testIdAttribute: "element-id" });
 
-test("test by overriding the test attribute", () => {
+// test("test by overriding the test attribute", () => {
+//   render(<App />);
+//   const ele = screen.getByTestId("override");
+//   expect(ele).toBeInTheDocument();
+// });
+
+// test("testing with getByDisplayValue", () => {
+//   render(<App />);
+//   const ele = screen.getByDisplayValue("Hello");
+//   expect(ele).toBeInTheDocument();
+// });
+
+// test("testing textarea with getByDisplayValue", () => {
+//   render(<App />);
+//   const ele = screen.getByDisplayValue("Hello from textarea");
+//   expect(ele).toBeInTheDocument();
+// });
+
+test("testing radio with getByDisplayValue", () => {
   render(<App />);
-  const ele = screen.getByTestId("override");
+  const ele = screen.getByDisplayValue("male");
   expect(ele).toBeInTheDocument();
+});
+
+test("testing textarea with getAllByDisplayValue", () => {
+  render(<App />);
+  const ele = screen.getAllByDisplayValue("Hello");
+  for (let i = 0; i < ele.length; i++) {
+    expect(ele[i]).toBeInTheDocument();
+  }
 });
