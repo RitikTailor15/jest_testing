@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 // import handleExternalPrint from "./helper";
 // import Users from "./Users";
+import User from "./User";
 
 function App() {
   // const [data, setData] = useState("");
@@ -156,12 +157,13 @@ function App() {
       </div> */}
       {/* <p>{userDataEv}</p>
       <button onClick={() => setUserDataEv("hello")}>Click me</button> */}
-      <h2>{name}</h2>
+      {/* <h2>{name}</h2>
       <input
         type="text"
         onChange={(e) => setName(e.target.value)}
         placeholder="enter name"
-      />
+      /> */}
+      <User name="Ritik Tailor" />
     </div>
   );
 }

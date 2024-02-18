@@ -11,6 +11,7 @@ import App from "./App";
 // import Users from "./Users";
 import handleExternalPrint from "./helper";
 import userEvent from "@testing-library/user-event";
+import User from "./User";
 
 // beforeAll(() => {
 //   console.log("***** Before All UseCase *****");
@@ -398,12 +399,18 @@ import userEvent from "@testing-library/user-event";
 //   expect(screen.getByText("Hello")).toBeInTheDocument();
 // });
 
-test("Test onchange keyboard event using act", async () => {
-  userEvent.setup();
-  render(<App />);
-  const input = screen.getByRole("textbox");
-  await act(async () => {
-    await userEvent.type(input, "Hello");
-  });
-  expect(screen.getByText("Hello")).toBeInTheDocument();
+// test("Test onchange keyboard event using act", async () => {
+//   userEvent.setup();
+//   render(<App />);
+//   const input = screen.getByRole("textbox");
+//   await act(async () => {
+//     await userEvent.type(input, "Hello");
+//   });
+//   expect(screen.getByText("Hello")).toBeInTheDocument();
+// });
+
+test("Props testing", () => {
+  render(<User name="Rakesh Tailor" />);
+  const el = screen.getByText("Rakesh Tailor");
+  expect(el).toBeInTheDocument();
 });
