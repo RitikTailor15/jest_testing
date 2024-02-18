@@ -68,10 +68,28 @@ function App() {
         <option>3</option>
         <option>4</option>
       </select> */}
-      <label htmlFor="user-name">Username</label>
+      {/* <label htmlFor="user-name">Username</label>
       <input type="text" id="user-name" defaultValue="Hello" />
       <label htmlFor="user-skills">Skills</label>
-      <input type="checkbox" id="user-skills" defaultChecked />
+      <input type="checkbox" id="user-skills" defaultChecked /> */}
+
+      <label htmlFor="user-name1">Username</label>
+      <input type="text" id="user-name1" defaultValue="Hello" />
+
+      <label htmlFor="user-name2">Username</label>
+      <input type="text" id="user-name2" defaultValue="Hello" />
+
+      <label htmlFor="user-name3">Username</label>
+      <input type="text" id="user-name3" defaultValue="Hello" />
+
+      <label htmlFor="user-skills1">Skills</label>
+      <input type="checkbox" id="user-skills1" defaultChecked />
+
+      <label htmlFor="user-skills2">Skills</label>
+      <input type="checkbox" id="user-skills2" defaultChecked />
+
+      <label htmlFor="user-skills3">Skills</label>
+      <input type="checkbox" id="user-skills3" defaultChecked />
     </div>
   );
 }

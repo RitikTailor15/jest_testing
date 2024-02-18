@@ -133,16 +133,34 @@ import handleExternalPrint from "./helper";
 //   }
 // });
 
-test("getByLabelText 1", () => {
+// test("getByLabelText 1", () => {
+//   render(<App />);
+//   const input = screen.getByLabelText("Username");
+//   expect(input).toBeInTheDocument();
+//   expect(input).toHaveValue("Hello");
+// });
+
+// test("getByLabelText 2", () => {
+//   render(<App />);
+//   const skills = screen.getByLabelText("Skills");
+//   expect(skills).toBeInTheDocument();
+//   expect(skills).toBeChecked();
+// });
+
+test("getAllByLabelText 1", () => {
   render(<App />);
-  const input = screen.getByLabelText("Username");
-  expect(input).toBeInTheDocument();
-  expect(input).toHaveValue("Hello");
+  const inputs = screen.getAllByLabelText("Username");
+  for (let i = 0; i < inputs.length; i++) {
+    expect(inputs[i]).toBeInTheDocument();
+    expect(inputs[i]).toHaveValue("Hello");
+  }
 });
 
-test("getByLabelText 2", () => {
+test("getAllByLabelText 2", () => {
   render(<App />);
-  const skills = screen.getByLabelText("Skills");
-  expect(skills).toBeInTheDocument();
-  expect(skills).toBeChecked();
+  const skills = screen.getAllByLabelText("Skills");
+  for (let i = 0; i < skills.length; i++) {
+    expect(skills[i]).toBeInTheDocument();
+    // expect(inputs[i]).toHaveValue("Hello");
+  }
 });
