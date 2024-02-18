@@ -250,16 +250,36 @@ import handleExternalPrint from "./helper";
 //   expect(ele).toBeInTheDocument();
 // });
 
-test("testing radio with getByDisplayValue", () => {
+// test("testing radio with getByDisplayValue", () => {
+//   render(<App />);
+//   const ele = screen.getByDisplayValue("male");
+//   expect(ele).toBeInTheDocument();
+// });
+
+// test("testing textarea with getAllByDisplayValue", () => {
+//   render(<App />);
+//   const ele = screen.getAllByDisplayValue("Hello");
+//   for (let i = 0; i < ele.length; i++) {
+//     expect(ele[i]).toBeInTheDocument();
+//   }
+// });
+
+test("testing by getByTitle", () => {
   render(<App />);
-  const ele = screen.getByDisplayValue("male");
-  expect(ele).toBeInTheDocument();
+  const titleEl = screen.getByTitle("Click");
+  expect(titleEl).toBeInTheDocument();
 });
 
-test("testing textarea with getAllByDisplayValue", () => {
+// test("testing span by getByTitle", () => {
+//   render(<App />);
+//   const titleEl = screen.getByTitle("blackIcon");
+//   expect(titleEl).toBeInTheDocument();
+// });
+
+test("testing span by getAllByTitle", () => {
   render(<App />);
-  const ele = screen.getAllByDisplayValue("Hello");
-  for (let i = 0; i < ele.length; i++) {
-    expect(ele[i]).toBeInTheDocument();
+  const titleEl = screen.getAllByTitle("blackIcon");
+  for (let i = 0; i < titleEl.length; i++) {
+    expect(titleEl[i]).toBeInTheDocument();
   }
 });

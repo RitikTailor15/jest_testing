@@ -104,9 +104,12 @@ function App() {
       <h2 data-testid="h2">h2 Testing with test id</h2>
       <div data-testid="div1">Testing with test id</div> */}
       {/* <div element-id="override">Overiding test id</div> */}
-      <input type="text" defaultValue="Hello" />
+      {/* <input type="text" defaultValue="Hello" />
       <textarea defaultValue="Hello" />
-      <input type="radio" defaultValue="male" />
+      <input type="radio" defaultValue="male" /> */}
+      <button title="Click">Click me</button>
+      <span title="blackIcon">&#x2660;</span>
+      <span title="blackIcon">&#x2660;</span>
     </div>
   );
 }
