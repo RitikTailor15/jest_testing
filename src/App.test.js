@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, configure } from "@testing-library/react";
 // import renderer from "react-test-renderer";
 import App from "./App";
 // import Users from "./Users";
@@ -216,16 +216,24 @@ import handleExternalPrint from "./helper";
 //   expect(div1).toBeInTheDocument();
 // });
 
-test("Test h2 by getTestId", () => {
-  render(<App />);
-  const div1 = screen.getByTestId("h2");
-  expect(div1).toBeInTheDocument();
-});
+// test("Test h2 by getTestId", () => {
+//   render(<App />);
+//   const div1 = screen.getByTestId("h2");
+//   expect(div1).toBeInTheDocument();
+// });
 
-test("Test by getAllTestId", () => {
+// test("Test by getAllTestId", () => {
+//   render(<App />);
+//   const div1 = screen.getAllByTestId("div1");
+//   for (let i = 0; i < div1.length; i++) {
+//     expect(div1[i]).toBeInTheDocument();
+//   }
+// });
+
+configure({ testIdAttribute: "element-id" });
+
+test("test by overriding the test attribute", () => {
   render(<App />);
-  const div1 = screen.getAllByTestId("div1");
-  for (let i = 0; i < div1.length; i++) {
-    expect(div1[i]).toBeInTheDocument();
-  }
+  const ele = screen.getByTestId("override");
+  expect(ele).toBeInTheDocument();
 });
