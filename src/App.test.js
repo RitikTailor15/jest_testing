@@ -409,8 +409,18 @@ import User from "./User";
 //   expect(screen.getByText("Hello")).toBeInTheDocument();
 // });
 
-test("Props testing", () => {
-  render(<User name="Rakesh Tailor" />);
-  const el = screen.getByText("Rakesh Tailor");
-  expect(el).toBeInTheDocument();
+// test("Props testing", () => {
+//   render(<User name="Rakesh Tailor" />);
+//   const el = screen.getByText("Rakesh Tailor");
+//   expect(el).toBeInTheDocument();
+// });
+
+test("Test function props", async () => {
+  const testFunction = jest.fn();
+  userEvent.setup();
+  render(<User name="Ritik" handleBtnClick={testFunction} />);
+  const btn = screen.getByRole("button");
+  await userEvent.click(btn);
+  // expect(testFunction).toBeCalled();
+  expect(testFunction).toHaveBeenCalled();
 });
