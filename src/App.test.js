@@ -1,4 +1,10 @@
-import { fireEvent, render, screen, configure } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  screen,
+  configure,
+  within,
+} from "@testing-library/react";
 // import renderer from "react-test-renderer";
 import App from "./App";
 // import Users from "./Users";
@@ -358,8 +364,18 @@ import handleExternalPrint from "./helper";
 //   expect(textEl).toBeInTheDocument();
 // });
 
-test("test with custom query", () => {
+// test("test with custom query", () => {
+//   render(<App />);
+//   const divEl = document.querySelector("#testid");
+//   expect(divEl).toBeInTheDocument();
+// });
+
+test("test within the element/function", () => {
   render(<App />);
-  const divEl = document.querySelector("#testid");
-  expect(divEl).toBeInTheDocument();
+  const hEL = screen.getByText("Hello world");
+  let subEL = within(hEL).getByText("Hello");
+  let subEL2 = within(hEL).getByText("Hi");
+  expect(hEL).toBeInTheDocument();
+  expect(subEL).toBeInTheDocument();
+  expect(subEL2).toBeInTheDocument();
 });
