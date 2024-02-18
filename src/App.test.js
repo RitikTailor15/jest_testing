@@ -4,6 +4,7 @@ import {
   screen,
   configure,
   within,
+  act,
 } from "@testing-library/react";
 // import renderer from "react-test-renderer";
 import App from "./App";
@@ -389,10 +390,20 @@ import userEvent from "@testing-library/user-event";
 //   expect(screen.getByText("hello")).toBeInTheDocument();
 // });
 
-test("Test onchange keyboard event", async () => {
+// test("Test onchange keyboard event", async () => {
+//   userEvent.setup();
+//   render(<App />);
+//   const el = screen.getByRole("textbox");
+//   await userEvent.type(el, "Hello");
+//   expect(screen.getByText("Hello")).toBeInTheDocument();
+// });
+
+test("Test onchange keyboard event using act", async () => {
   userEvent.setup();
   render(<App />);
-  const el = screen.getByRole("textbox");
-  await userEvent.type(el, "Hello");
+  const input = screen.getByRole("textbox");
+  await act(async () => {
+    await userEvent.type(input, "Hello");
+  });
   expect(screen.getByText("Hello")).toBeInTheDocument();
 });
