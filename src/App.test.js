@@ -147,20 +147,37 @@ import handleExternalPrint from "./helper";
 //   expect(skills).toBeChecked();
 // });
 
-test("getAllByLabelText 1", () => {
-  render(<App />);
-  const inputs = screen.getAllByLabelText("Username");
-  for (let i = 0; i < inputs.length; i++) {
-    expect(inputs[i]).toBeInTheDocument();
-    expect(inputs[i]).toHaveValue("Hello");
-  }
-});
+// test("getAllByLabelText 1", () => {
+//   render(<App />);
+//   const inputs = screen.getAllByLabelText("Username");
+//   for (let i = 0; i < inputs.length; i++) {
+//     expect(inputs[i]).toBeInTheDocument();
+//     expect(inputs[i]).toHaveValue("Hello");
+//   }
+// });
 
-test("getAllByLabelText 2", () => {
+// test("getAllByLabelText 2", () => {
+//   render(<App />);
+//   const skills = screen.getAllByLabelText("Skills");
+//   for (let i = 0; i < skills.length; i++) {
+//     expect(skills[i]).toBeInTheDocument();
+//     // expect(inputs[i]).toHaveValue("Hello");
+//   }
+// });
+
+// Get placeholder test
+// test("getByPlaceholderText", () => {
+//   render(<App />);
+//   const placeHolderInput = screen.getByPlaceholderText("This is place holder");
+//   expect(placeHolderInput).toBeInTheDocument();
+// });
+
+test("getAllByPlaceholderText", () => {
   render(<App />);
-  const skills = screen.getAllByLabelText("Skills");
-  for (let i = 0; i < skills.length; i++) {
-    expect(skills[i]).toBeInTheDocument();
-    // expect(inputs[i]).toHaveValue("Hello");
+  const placeHolderInputs = screen.getAllByPlaceholderText(
+    "This is place holder"
+  );
+  for (let i = 0; i < placeHolderInputs.length; i++) {
+    expect(placeHolderInputs[i]).toBeInTheDocument();
   }
 });

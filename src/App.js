@@ -73,7 +73,7 @@ function App() {
       <label htmlFor="user-skills">Skills</label>
       <input type="checkbox" id="user-skills" defaultChecked /> */}
 
-      <label htmlFor="user-name1">Username</label>
+      {/* <label htmlFor="user-name1">Username</label>
       <input type="text" id="user-name1" defaultValue="Hello" />
 
       <label htmlFor="user-name2">Username</label>
@@ -89,7 +89,11 @@ function App() {
       <input type="checkbox" id="user-skills2" defaultChecked />
 
       <label htmlFor="user-skills3">Skills</label>
-      <input type="checkbox" id="user-skills3" defaultChecked />
+      <input type="checkbox" id="user-skills3" defaultChecked /> */}
+
+      <input type="text" placeholder="This is place holder" />
+      <input type="text" placeholder="This is place holder" />
+      <input type="text" placeholder="This is place holder" />
     </div>
   );
 }
