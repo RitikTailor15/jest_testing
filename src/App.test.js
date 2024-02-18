@@ -290,10 +290,29 @@ import handleExternalPrint from "./helper";
 //   expect(imageEL).toBeInTheDocument();
 // });
 
-test("testing alt image by getAllByAltText", () => {
+// test("testing alt image by getAllByAltText", () => {
+//   render(<App />);
+//   const imageEL = screen.getAllByAltText("img");
+//   for (let i = 0; i < imageEL.length; i++) {
+//     expect(imageEL[i]).toBeInTheDocument();
+//   }
+// });
+
+test("Assertion testing with input", () => {
   render(<App />);
-  const imageEL = screen.getAllByAltText("img");
-  for (let i = 0; i < imageEL.length; i++) {
-    expect(imageEL[i]).toBeInTheDocument();
-  }
+  const input = screen.getByRole("textbox");
+  expect(input).toBeInTheDocument();
+  expect(input).toHaveValue("Hello");
+  expect(input).toBeEnabled();
+  // expect(input).toBeDisabled();
+  expect(input).toHaveAttribute("id", "user");
+  expect(input).toHaveClass("user-style");
+});
+
+test("Negative Assertion testing with input", () => {
+  render(<App />);
+  const btn = screen.getByRole("button");
+  expect(btn).toBeInTheDocument();
+  expect(btn).not.toHaveClass("btn1");
+  // expect(btn).not.toHaveAttribute("id");
 });

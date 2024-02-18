@@ -110,7 +110,7 @@ function App() {
       {/* <button title="Click">Click me</button>
       <span title="blackIcon">&#x2660;</span>
       <span title="blackIcon">&#x2660;</span> */}
-      <img
+      {/* <img
         title="Car Image"
         src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?cs=srgb&dl=pexels-mike-bird-170811.jpg&fm=jpg"
         style={{
@@ -125,7 +125,16 @@ function App() {
           width: "500px",
         }}
         alt="img"
+      /> */}
+      <input
+        type="text"
+        defaultValue="Hello"
+        className="user-style"
+        id="user"
       />
+      <button className="btn" id="btnId">
+        Click me
+      </button>
     </div>
   );
 }
